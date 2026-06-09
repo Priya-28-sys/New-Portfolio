@@ -103,6 +103,10 @@ body{
     background:#60a5fa;
     border-radius:10px;
 }
+img{
+    max-width:100%;
+    height:auto;
+}
 
 /* Header */
 
@@ -372,13 +376,13 @@ footer{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(350px,1fr));
+    repeat(auto-fit,minmax(280px,1fr));
 
     gap:40px;
 
     align-items:center;
 
-    padding:50px;
+    padding:20px;
 
     background:var(--card-bg);
 
@@ -388,7 +392,6 @@ footer{
 
     margin-bottom:40px;
 }
-
 .hero-content h1{
 
     font-size:3rem;
@@ -483,6 +486,37 @@ footer{
     }
 
 }
+@media(max-width:768px){
+
+    .hero{
+        padding:20px;
+    }
+
+    .hero-image img{
+        width:220px;
+        height:220px;
+    }
+    header h1{
+        font-size:2rem;
+    }
+
+    nav ul{
+        flex-direction:column;
+    }
+
+    .container{
+        width:95%;
+    }
+
+}
+
+@media(min-width:768px){
+
+    .hero{
+        padding:50px;
+    }
+
+}
 </style>
 
 </head>
@@ -510,7 +544,7 @@ footer{
     <center>
         <h2 id="hero-title">Welcome to My Portfolio</h2>
     </center>
-        <p><section class="hero">
+        <section class="hero">
 
     <div class="hero-content">
 
@@ -621,4 +655,3 @@ themeBtn.addEventListener("click",()=>{
 
 </body>
 </html>
-```
