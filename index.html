@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Priya's personal portfolio website showcasing projects and skills.">
+
+<meta name="keywords"
+content="Portfolio, Student, Web Developer">
+
+<meta name="author"
+content="Priya Thiyagarajan">
+
+<title>Home | Priya Thiyagarajan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+:root{
+
+    --bg-gradient:
+    linear-gradient(
+    135deg,
+    #f8fafc,
+    #dbeafe,
+    #e0e7ff
+    );
+
+    --text-color:#1e293b;
+
+    --card-bg:
+    rgba(255,255,255,0.65);
+
+    --nav-bg:
+    rgba(255,255,255,0.75);
+
+    --primary:#2563eb;
+
+    --secondary:#7c3aed;
+
+    --border:
+    rgba(255,255,255,0.4);
+}
+
+/* Dark Theme */
+
+.dark{
+
+    --bg-gradient:
+    linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #312e81
+    );
+
+    --text-color:white;
+
+    --card-bg:
+    rgba(255,255,255,0.08);
+
+    --nav-bg:
+    rgba(255,255,255,0.08);
+
+    --primary:#60a5fa;
+
+    --secondary:#c084fc;
+
+    --border:
+    rgba(255,255,255,0.12);
+}
+
+body{
+
+    min-height:100vh;
+
+    background:var(--bg-gradient);
+
+    color:var(--text-color);
+
+    transition:0.4s ease;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#60a5fa;
+    border-radius:10px;
+}
+
+/* Header */
+
+header{
+    text-align:center;
+    padding:50px 20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+    header h1{
+    font-size:3rem;
+    font-weight:700;
+    color:var(--primary);
+}
+header p{
+    color:var(--text-color);
+    margin-top:10px;
+}
+
+/* Navigation */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:var(--nav-bg);
+    backdrop-filter:blur(20px);
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    color:var(--text-color);
+    text-decoration:none;
+    padding:18px 25px;
+    display:block;
+    transition:0.4s;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#60a5fa;
+    transform:translateY(-2px);
+}
+#themeBtn{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:10px 15px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    margin-left:20px;
+
+    transition:0.3s;
+}
+
+#themeBtn:hover{
+
+    transform:scale(1.1);
+}
+/* Container */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 0;
+}
+
+/* Glass Cards */
+
+.card,
+section,
+article{
+    background:var(--card-bg);
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.25);
+
+    transition:0.4s ease;
+}
+
+.card:hover,
+section:hover{
+    transform:translateY(-8px);
+}
+
+/* Titles */
+
+h1,h2,h3{
+    margin-bottom:15px;
+}
+
+h2{
+    color:#93c5fd;
+}
+
+/* Home Page Highlights */
+
+.highlight-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.highlight{
+    background:var(--card-bg);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:0.3s;
+}
+
+.highlight:hover{
+    transform:scale(1.05);
+
+    background:var(--card-bg);
+}
+
+/* Skills */
+
+.skills-container{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+/* Strength Cards */
+
+.strengths{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:15px;
+}
+
+.strength-item{
+    background:var(--card-bg);
+
+    padding:18px;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    transition:0.3s;
+}
+
+.strength-item:hover{
+    background:#3b82f6;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+}
+
+table td{
+    padding:15px;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+table td:first-child{
+    font-weight:600;
+    color:#93c5fd;
+}
+
+/* Contact Links */
+
+a{
+    color:#60a5fa;
+}
+
+a:hover{
+    color:#c084fc;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    margin-top:30px;
+}
+
+/* Profile Image */
+
+.profile-pic{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+
+    border:4px solid #60a5fa;
+
+    margin:20px auto;
+
+    display:block;
+
+    box-shadow:
+    0 0 40px rgba(96,165,250,0.5);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    nav ul{
+        flex-direction:column;
+    }
+
+    .container{
+        width:95%;
+    }
+
+}
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:40px;
+
+    align-items:center;
+
+    padding:50px;
+
+    background:var(--card-bg);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    margin-bottom:40px;
+}
+
+.hero-content h1{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+}
+
+.hero-content h3{
+
+    color:var(--secondary);
+
+    margin-bottom:20px;
+}
+
+.hero-content p{
+
+    margin-bottom:25px;
+
+    font-size:1.05rem;
+}
+
+.hero-image{
+
+    text-align:center;
+}
+
+.hero-image img{
+
+    width:300px;
+
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid var(--primary);
+
+    box-shadow:
+    0 0 40px rgba(96,165,250,0.5);
+}
+.badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.badges span{
+
+    background:
+    linear-gradient(
+    135deg,
+    #60a5fa,
+    #c084fc
+    );
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    animation:float 3s infinite ease-in-out;
+
+    transition:0.3s;
+}
+
+.badges span:hover{
+
+    transform:scale(1.1);
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+<nav aria-label="Main Navigation">
+    <ul>
+        <li><a href="index.html">Home   </a></li>
+        <li><a href="about.html">About       </a></li>
+        <li><a href="projects.html">Projects   </a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="themeBtn">
+    🌙
+</button>
+</nav>
+
+
+
+<main>
+
+<div class="container">
+
+    <section class="card" aria-labelledby="hero-title">
+    <center>
+        <h2 id="hero-title">Welcome to My Portfolio</h2>
+    </center>
+        <p><section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Hi, I'm Priya </h1>
+
+        <h3>
+            B.Tech IT Student | Aspiring Web Developer
+        </h3>
+
+        <p>
+            Passionate about building responsive web applications,
+            learning emerging technologies and solving real-world
+            problems through software.
+        </p>
+
+        <div class="badges">
+
+            <span>C</span>
+
+            <span>C++</span>
+
+            <span>Python</span>
+
+            <span>HTML5</span>
+
+            <span>CSS3</span>
+
+            <span>JavaScript</span>
+
+            <span>React</span>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="priya.jpg"
+             alt="Priya">
+
+    </div>
+
+</section>
+
+    <section class="card">
+        <center>
+        <h2>Quick Highlights</h2>
+        </center>
+
+
+        <div class="highlight-grid">
+
+            
+
+            <div class="highlight">
+                 Skilled in C, C++ and Python
+            </div>
+
+            <div class="highlight">
+                Knowledge of HTML, CSS, JavaScript & React
+            </div>
+
+
+            <div class="highlight">
+                Strong Communication Skills
+            </div>
+
+
+        </div>
+
+    </section>
+
+</div>
+
+</main>
+
+<footer>
+    <p>© 2026 Priya T All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// Check saved theme
+
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+}
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("theme","dark");
+
+    }else{
+
+        localStorage.setItem("theme","light");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
